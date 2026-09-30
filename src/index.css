@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-cream font-sans text-base leading-relaxed text-ink antialiased;
+  }
+  ::selection { @apply bg-burgundy text-cream; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-burgundy; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
+
+@layer components {
+  /* Typography hierarchy: serif for headings, sans for everything else */
+  .type-display { @apply font-display text-[2.75rem] font-medium leading-[1.05] tracking-tight md:text-6xl lg:text-7xl; }
+  .type-h1 { @apply font-display text-4xl font-medium leading-[1.1] tracking-tight md:text-5xl; }
+  .type-h2 { @apply font-display text-3xl font-medium leading-[1.15] md:text-4xl; }
+  .type-h3 { @apply font-display text-xl font-semibold leading-snug md:text-2xl; }
+  .type-body { @apply font-sans text-base leading-relaxed md:text-[1.0625rem]; }
+  .type-label { @apply font-sans text-sm font-semibold tracking-wide; }
+  .type-caption { @apply font-sans text-xs leading-normal text-muted; }
+
+  /* Layout */
+  .page-container { @apply mx-auto w-full max-w-page px-5 sm:px-8 lg:px-10; }
+  .section { @apply py-16 md:py-24 lg:py-28; }
+}
