@@ -19,8 +19,8 @@ export const occasions: Occasion[] = [
     name: 'Festivals & Traditions',
     description: 'Festive decor for homes, pujas and seasonal moments.',
     examples: ['Dussehra', 'Diwali', 'Sankranti', 'Ugadi', 'Ganesh Chaturthi', 'Vratham', 'Housewarming / Griha Pravesh', 'Puja / temple decor', 'Seasonal installations'],
-    image: '/images/occasions/festivals-traditions.jpg',
-    alt: 'Festival decor with flowers and lamps',
+    image: '/images/designs/vratham-marigold-kolam.jpg',
+    alt: 'Marigold and kolam Vratham decor by Alankarana',
     tone: 'gold',
   },
   {
@@ -28,8 +28,8 @@ export const occasions: Occasion[] = [
     name: 'Weddings & Related Functions',
     description: 'Decor for the small and big moments around a wedding.',
     examples: ['Pellikoduku', 'Pellikuthuru', 'Haldi', 'Mehendi', 'Engagement', 'Small weddings', 'Intimate receptions'],
-    image: '/images/occasions/weddings-related-functions.jpg',
-    alt: 'Wedding function decor with floral details',
+    image: '/images/designs/wedding-manduva-marigold.jpg',
+    alt: 'Manduva-style marigold wedding decor by Alankarana',
     tone: 'rose',
   },
   {
@@ -37,8 +37,8 @@ export const occasions: Occasion[] = [
     name: 'Baby & Family Milestones',
     description: 'Gentle setups for the first ceremonies of a new arrival.',
     examples: ['Baby shower', 'Srimantham', 'Gender reveal', 'Naming', 'Annaprasana', 'Aksharabhyasam'],
-    image: '/images/occasions/baby-family-milestones.jpg',
-    alt: 'Baby shower decor in soft colours',
+    image: '/images/designs/annaprasana-yashoda-krishna.jpg',
+    alt: 'Traditional Annaprasana decor by Alankarana',
     tone: 'ivory',
   },
   {
@@ -46,8 +46,8 @@ export const occasions: Occasion[] = [
     name: 'Birthdays & Personal Moments',
     description: 'Decor that makes a personal day feel special.',
     examples: ['Kids birthdays', 'Adult birthdays', 'Proposals', 'Anniversaries', 'Graduations', 'Retirement', 'Farewells'],
-    image: '/images/occasions/birthdays-personal-moments.jpg',
-    alt: 'Birthday decor with balloons and florals',
+    image: '/images/designs/reception-peach-silk-floral-arch.jpg',
+    alt: 'Peach silk and floral arch reception decor by Alankarana',
     tone: 'sand',
   },
   {

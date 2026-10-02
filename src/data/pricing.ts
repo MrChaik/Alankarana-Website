@@ -33,6 +33,5 @@ export const pricingCopy = {
     heading: 'Confirmed in your quotation',
     items: ['Size / coverage', 'Flowers used', 'Labour', 'Transport', 'Exclusions'],
     note: 'These are finalised for each event. Transport is included within the city.',
-  },
-  cta: { label: 'View Pricing Guide', to: '/#pricing' },
+  }
 }

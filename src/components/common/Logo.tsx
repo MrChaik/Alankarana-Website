@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom'
 import { site } from '@/data/site'
 
-// Text wordmark for now. When the logo file is added to /public/images, swap the text for an <img>.
-export default function Logo({ light = false }: { light?: boolean }) {
+export default function Logo({ light = false, icon = false }: { light?: boolean; icon?: boolean }) {
   return (
     <Link
       to="/"
       aria-label={`${site.name} home`}
-      className={`font-display text-[1.65rem] font-semibold leading-none tracking-wide ${light ? 'text-cream' : 'text-burgundy'}`}
+      className={`inline-flex items-center gap-2 font-display text-[1.65rem] font-semibold leading-none tracking-wide ${light ? 'text-cream' : 'text-burgundy'}`}
     >
-      {site.name}
+      {icon && <img src="/alankarana-icon.png" alt="" className="h-10 w-auto shrink-0 rounded-sm" />}
+      <span>{site.name}</span>
     </Link>
   )
 }

@@ -15,6 +15,8 @@ function isCurrent(to: string, pathname: string, hash: string) {
     const path = to.slice(0, hashAt) || '/'
     return pathname === path && hash === to.slice(hashAt)
   }
+  // Design detail pages (/catalogue/:id) stay under Designs.
+  if (to === '/catalogue') return pathname === '/catalogue' || pathname.startsWith('/catalogue/')
   return pathname === to
 }
 
@@ -36,7 +38,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-cream">
       <Container className="flex h-16 items-center justify-between lg:h-[72px]">
-        <Logo />
+        <Logo icon />
 
         <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
           {navLinks.map((l) => (

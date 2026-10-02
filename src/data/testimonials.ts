@@ -13,7 +13,15 @@ export type Testimonial = {
 }
 
 export const testimonials: Testimonial[] = [
-  { id: 'testimonial-1', status: 'placeholder', quote: 'Approved customer testimonial will be added here.', attributionPermission: false },
+  {
+    id: 'testimonial-1',
+    status: 'approved',
+    quote: 'Absolutely loved the decor, exceeded expectations!',
+    name: 'Priya and Arjun',
+    occasion: 'Wedding · Mar 2026',
+    location: 'Banjara Hills',
+    attributionPermission: true,
+  },
   { id: 'testimonial-2', status: 'placeholder', quote: 'Approved customer testimonial will be added here.', attributionPermission: false },
   { id: 'testimonial-3', status: 'placeholder', quote: 'Approved customer testimonial will be added here.', attributionPermission: false },
 ]

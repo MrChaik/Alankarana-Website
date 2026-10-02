@@ -8,27 +8,26 @@ export default function Layout() {
   // Filter changes (query string only) keep the scroll position.
   const { pathname, hash } = useLocation()
   useEffect(() => {
-    const scroll = (immediate: boolean) => {
+    const scroll = () => {
       const root = document.documentElement
       const previous = root.style.scrollBehavior
-      if (immediate) root.style.scrollBehavior = 'auto'
+      root.style.scrollBehavior = 'auto'
       if (hash) {
         const el = document.getElementById(hash.slice(1))
-        if (el) el.scrollIntoView({ block: 'start', behavior: immediate ? 'auto' : 'smooth' })
+        if (el) el.scrollIntoView({ block: 'start' })
         else window.scrollTo(0, 0)
       } else {
         window.scrollTo(0, 0)
       }
-      if (immediate) root.style.scrollBehavior = previous
+      window.requestAnimationFrame(() => {
+        root.style.scrollBehavior = previous
+      })
     }
 
-    // Wait until the mobile menu has collapsed. Closing it cancels a smooth scroll.
+    // Scroll after native hash handling and menu layout changes have settled.
     const menuOpen = document.querySelector('nav[aria-label="Mobile"]')
-    if (menuOpen) {
-      const timer = window.setTimeout(() => scroll(true), 350)
-      return () => window.clearTimeout(timer)
-    }
-    scroll(false)
+    const timer = window.setTimeout(scroll, menuOpen ? 350 : 100)
+    return () => window.clearTimeout(timer)
   }, [pathname, hash])
 
   return (

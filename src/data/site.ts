@@ -16,7 +16,8 @@ export const site = {
 
 export const navLinks = [
   { label: 'Occasions', to: '/#occasions' },
-  { label: 'Catalogue', to: '/catalogue' },
+  { label: 'Venues', to: '/#venues' },
+  { label: 'Designs', to: '/catalogue' },
   { label: 'Pricing Guide', to: '/#pricing' },
   { label: 'Our Work', to: '/#our-work' },
   { label: 'About', to: '/#about' },

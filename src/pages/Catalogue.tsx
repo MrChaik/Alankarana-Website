@@ -37,7 +37,7 @@ export default function Catalogue() {
           <Breadcrumb
             items={[
               { label: 'Home', to: '/' },
-              activeLabels.length ? { label: 'Catalogue', to: '/catalogue' } : { label: 'Catalogue' },
+              activeLabels.length ? { label: 'Designs', to: '/catalogue' } : { label: 'Designs' },
               ...(activeLabels.length ? [{ label: activeLabels.join(', ') }] : []),
             ]}
           />

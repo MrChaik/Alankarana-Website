@@ -10,7 +10,7 @@ import { formatPrice } from '@/lib/format'
 const chip = 'rounded border border-line bg-card px-3.5 py-1.5 text-sm font-medium text-ink/80'
 
 export default function PricingGuide() {
-  const { notes, includes, cta } = pricingCopy
+  const { notes, includes} = pricingCopy
   return (
     <section id="pricing" className="section bg-cream" aria-labelledby="pricing-heading">
       <Container>
@@ -76,10 +76,6 @@ export default function PricingGuide() {
             </div>
           </div>
         </Reveal>
-
-        <div className="mt-10 text-center">
-          <Button to={cta.to} size="lg">{cta.label}</Button>
-        </div>
       </Container>
     </section>
   )
