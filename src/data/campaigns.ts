@@ -1,6 +1,6 @@
 // Featured seasonal campaign.
-// The brief does not confirm a first campaign, so this is a clearly marked placeholder.
-// To go live: set status to 'live' and fill in the fields below. Optional fields
+// First campaign (from First_Campaigns sheet, priority 1): Wedding Decor, year-round, peak Nov to Feb.
+// Fill in the fields below. Optional fields
 // (dates, offer, featured designs, image kind) only appear on the page when they have a value.
 // Do not add dates, offers or prices until operations has confirmed them.
 
@@ -21,13 +21,14 @@ export type Campaign = {
 }
 
 export const campaign: Campaign = {
-  id: 'placeholder',
-  status: 'placeholder',
-  label: 'Featured campaign',
-  name: 'Seasonal Campaign',
-  description: 'Campaign content will be added after operations confirmation.',
-  image: '/images/campaigns/featured.jpg',
-  imageAlt: 'Seasonal campaign decor',
-  featuredDesignIds: [],
-  cta: { label: 'Explore Designs', to: '/designs' },
+  id: 'wedding-decor',
+  status: 'live',
+  label: 'Featured',
+  name: 'Wedding Decor',
+  description: 'Decor for weddings and the functions around them. We take wedding bookings year-round, with the busiest season from November to February.',
+  image: '/images/designs/wedding-manduva-marigold-2.jpg', // a real wedding we decorated (landscape photo)
+  imageAlt: 'Manduva-style marigold wedding decor by Alankarana',
+  imageKind: 'real-work',
+  featuredDesignIds: [], // the wedding designs are shown in "Featured designs" just below
+  cta: { label: 'Explore Wedding Designs', to: '/catalogue?occasion=weddings-related-functions' },
 }

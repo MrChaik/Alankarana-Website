@@ -49,7 +49,7 @@ export default function CampaignSection() {
               <ul className="mt-5 flex flex-wrap gap-2">
                 {designs.map((d) => (
                   <li key={d.id}>
-                    <Link to={`/designs/${d.id}`} className="inline-block rounded border border-cream/35 px-3 py-1.5 text-sm text-cream transition-colors hover:border-cream hover:bg-cream/10">
+                    <Link to={`/catalogue/${d.id}`} className="inline-block rounded border border-cream/35 px-3 py-1.5 text-sm text-cream transition-colors hover:border-cream hover:bg-cream/10">
                       {d.title}
                     </Link>
                   </li>

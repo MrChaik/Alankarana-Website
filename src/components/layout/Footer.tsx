@@ -37,8 +37,8 @@ export default function Footer() {
           <p className="type-label mb-4 text-gold-soft">Get in touch</p>
           <ul className="space-y-3">
             <li className={`flex items-center gap-3 ${item}`}><Phone size={16} strokeWidth={1.5} />{site.phone}</li>
-            <li className={`flex items-center gap-3 ${item}`}><Mail size={16} strokeWidth={1.5} />{site.email}</li>
-            <li className={`flex items-center gap-3 ${item}`}><MapPin size={16} strokeWidth={1.5} />{site.city}</li>
+            <li className={`flex items-center gap-3 ${item}`}><Mail size={16} strokeWidth={1.5} /><a href={`mailto:${site.email}`}>{site.email}</a></li>
+            <li className={`flex items-center gap-3 ${item}`}><MapPin size={16} strokeWidth={1.5} />{site.serviceArea}</li>
           </ul>
           <WhatsAppButton variant="secondary" className="mt-6 !border-cream/40 !text-cream hover:!border-cream hover:!bg-cream/10" />
         </div>

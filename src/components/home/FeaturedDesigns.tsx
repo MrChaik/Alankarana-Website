@@ -11,7 +11,7 @@ export default function FeaturedDesigns() {
       <Container>
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <SectionHeading id="designs-heading" heading="Featured designs" text="A selection of decor looks to start from." />
-          <Button to="/designs" variant="secondary" className="self-start">View all designs</Button>
+          <Button to="/catalogue" variant="secondary" className="self-start">View all designs</Button>
         </div>
 
         {/* Swipeable row on mobile and tablet, 3-column grid on desktop */}

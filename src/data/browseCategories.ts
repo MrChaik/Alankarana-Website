@@ -2,8 +2,7 @@ import { Building, Building2, Coffee, GraduationCap, Home, Hotel, Landmark, Tree
 import type { LucideIcon } from 'lucide-react'
 
 // "Browse by" groups for the homepage. These are navigation categories, not claims about inventory.
-// Links point at routes that will be built later (venue pages, and the Designs catalogue with filters).
-// Until then they fall back to the homepage.
+// Every link opens the central Catalogue with a filter applied, e.g. /catalogue?venue=home.
 
 export type BrowseItem = { slug: string; label: string; to: string; icon?: LucideIcon }
 
@@ -15,9 +14,9 @@ export type BrowseGroup = {
   note?: string
 }
 
-const venue = (slug: string, label: string, icon: LucideIcon): BrowseItem => ({ slug, label, icon, to: `/venues/${slug}` })
-const style = (slug: string, label: string): BrowseItem => ({ slug, label, to: `/designs?style=${slug}` })
-const budget = (slug: string, label: string): BrowseItem => ({ slug, label, to: `/designs?budget=${slug}` })
+const venue = (slug: string, label: string, icon: LucideIcon): BrowseItem => ({ slug, label, icon, to: `/catalogue?venue=${slug}` })
+const style = (slug: string, label: string): BrowseItem => ({ slug, label, to: `/catalogue?style=${slug}` })
+const budget = (slug: string, label: string): BrowseItem => ({ slug, label, to: `/catalogue?budget=${slug}` })
 
 export const browseGroups: BrowseGroup[] = [
   {

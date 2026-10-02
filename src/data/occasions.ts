@@ -18,7 +18,7 @@ export const occasions: Occasion[] = [
     slug: 'festivals-traditions',
     name: 'Festivals & Traditions',
     description: 'Festive decor for homes, pujas and seasonal moments.',
-    examples: ['Dussehra', 'Diwali', 'Sankranti', 'Ugadi', 'Ganesh Chaturthi', 'Puja / temple decor', 'Seasonal installations'],
+    examples: ['Dussehra', 'Diwali', 'Sankranti', 'Ugadi', 'Ganesh Chaturthi', 'Vratham', 'Housewarming / Griha Pravesh', 'Puja / temple decor', 'Seasonal installations'],
     image: '/images/occasions/festivals-traditions.jpg',
     alt: 'Festival decor with flowers and lamps',
     tone: 'gold',

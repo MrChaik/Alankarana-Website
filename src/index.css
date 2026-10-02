@@ -27,4 +27,6 @@
   /* Layout */
   .page-container { @apply mx-auto w-full max-w-page px-5 sm:px-8 lg:px-10; }
   .section { @apply py-16 md:py-24 lg:py-28; }
+  /* Sticky header is h-16 / 72px. Keep anchored headings below it. */
+  section[id] { scroll-margin-top: 5rem; }
 }

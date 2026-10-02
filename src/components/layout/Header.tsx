@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import Container from '@/components/common/Container'
@@ -8,13 +8,30 @@ import WhatsAppButton from '@/components/ui/WhatsAppButton'
 import { navLinks } from '@/data/site'
 import { ease } from '@/lib/motion'
 
-const linkCls = ({ isActive }: { isActive: boolean }) =>
-  `text-sm font-medium transition-colors duration-200 hover:text-burgundy ${isActive ? 'text-burgundy' : 'text-ink/80'}`
+// Hash links share the path "/", so match the fragment instead of NavLink's default.
+function isCurrent(to: string, pathname: string, hash: string) {
+  const hashAt = to.indexOf('#')
+  if (hashAt !== -1) {
+    const path = to.slice(0, hashAt) || '/'
+    return pathname === path && hash === to.slice(hashAt)
+  }
+  return pathname === to
+}
 
 export default function Header() {
   const [open, setOpen] = useState(false)
-  const { pathname } = useLocation()
-  useEffect(() => setOpen(false), [pathname])
+  const { pathname, hash } = useLocation()
+  useEffect(() => {
+    // Drop focus before the menu unmounts, or the browser scrolls to the top.
+    const active = document.activeElement
+    if (active instanceof HTMLElement && active.closest('nav[aria-label="Mobile"]')) active.blur()
+    setOpen(false)
+  }, [pathname, hash])
+
+  const desktopCls = (to: string) =>
+    `text-sm font-medium transition-colors duration-200 hover:text-burgundy ${isCurrent(to, pathname, hash) ? 'text-burgundy' : 'text-ink/80'}`
+  const mobileCls = (to: string) =>
+    `border-b border-line/70 py-3.5 font-display text-xl ${isCurrent(to, pathname, hash) ? 'text-burgundy' : 'text-ink'}`
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-cream">
@@ -23,7 +40,7 @@ export default function Header() {
 
         <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
           {navLinks.map((l) => (
-            <NavLink key={l.to} to={l.to} className={linkCls}>{l.label}</NavLink>
+            <Link key={l.to} to={l.to} className={desktopCls(l.to)} aria-current={isCurrent(l.to, pathname, hash) ? 'page' : undefined}>{l.label}</Link>
           ))}
         </nav>
 
@@ -53,13 +70,14 @@ export default function Header() {
           >
             <Container className="flex flex-col py-3">
               {navLinks.map((l) => (
-                <NavLink
+                <Link
                   key={l.to}
                   to={l.to}
-                  className={({ isActive }) => `border-b border-line/70 py-3.5 font-display text-xl ${isActive ? 'text-burgundy' : 'text-ink'}`}
+                  className={mobileCls(l.to)}
+                  aria-current={isCurrent(l.to, pathname, hash) ? 'page' : undefined}
                 >
                   {l.label}
-                </NavLink>
+                </Link>
               ))}
               <WhatsAppButton size="lg" className="my-5 w-full" />
             </Container>

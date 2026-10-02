@@ -15,7 +15,7 @@ export default function Hero() {
           <motion.h1 variants={fadeUp} className="type-display text-burgundy lg:text-[4.25rem]">{hero.heading}</motion.h1>
           <motion.p variants={fadeUp} className="type-body mt-6 max-w-md text-muted">{hero.text}</motion.p>
           <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
-            <Button to="/designs" size="lg">Explore Designs</Button>
+            <Button to="/catalogue" size="lg">Explore Designs</Button>
             <WhatsAppButton size="lg" variant="secondary" />
           </motion.div>
         </motion.div>
