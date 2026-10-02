@@ -6,9 +6,7 @@ import OurWork from '@/components/home/OurWork'
 import Testimonials from '@/components/home/Testimonials'
 import BrowseBy from '@/components/home/BrowseBy'
 import HowItWorks from '@/components/home/HowItWorks'
-import PricingGuide from '@/components/home/PricingGuide'
 import WhyAlankarana from '@/components/home/WhyAlankarana'
-import AboutIntro from '@/components/home/AboutIntro'
 import FinalCta from '@/components/home/FinalCta'
 
 // Header and Footer come from <Layout />. Section order follows the homepage brief.
@@ -23,9 +21,7 @@ export default function Home() {
       <Testimonials />
       <BrowseBy />
       <HowItWorks />
-      <PricingGuide />
       <WhyAlankarana />
-      <AboutIntro />
       <FinalCta />
     </div>
   )

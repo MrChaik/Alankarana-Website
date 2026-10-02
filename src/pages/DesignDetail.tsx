@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Breadcrumb from '@/components/common/Breadcrumb'
 import Container from '@/components/common/Container'
 import Media from '@/components/common/Media'
@@ -74,7 +74,7 @@ export default function DesignDetail() {
             </div>
 
             <div>
-              <p className="type-label text-gold">{occasionName(design.occasion)}</p>
+              <Link to={`/occasions/${design.occasion}`} className="type-label text-gold hover:text-burgundy">{occasionName(design.occasion)}</Link>
               <h1 className="type-h1 mt-2">{design.title}</h1>
               {design.description && <p className="type-body mt-4 text-muted">{design.description}</p>}
 

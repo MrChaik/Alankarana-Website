@@ -15,12 +15,13 @@ export const site = {
 }
 
 export const navLinks = [
+  { label: 'Home', to: '/' },
   { label: 'Occasions', to: '/#occasions' },
   { label: 'Venues', to: '/#venues' },
   { label: 'Designs', to: '/catalogue' },
-  { label: 'Pricing Guide', to: '/#pricing' },
+  { label: 'Pricing Guide', to: '/pricing' },
   { label: 'Our Work', to: '/#our-work' },
-  { label: 'About', to: '/#about' },
+  { label: 'About', to: '/about' },
   { label: 'Contact', to: '/#contact' },
 ]
 

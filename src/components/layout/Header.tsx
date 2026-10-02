@@ -10,6 +10,10 @@ import { ease } from '@/lib/motion'
 
 // Hash links share the path "/", so match the fragment instead of NavLink's default.
 function isCurrent(to: string, pathname: string, hash: string) {
+  // Home is the top of the homepage, not a section further down the page.
+  if (to === '/') return pathname === '/' && hash === ''
+  // Dedicated occasion pages stay under Occasions.
+  if (to === '/#occasions' && pathname.startsWith('/occasions/')) return true
   const hashAt = to.indexOf('#')
   if (hashAt !== -1) {
     const path = to.slice(0, hashAt) || '/'

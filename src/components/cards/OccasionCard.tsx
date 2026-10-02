@@ -16,7 +16,7 @@ export default function OccasionCard({ occasion }: { occasion: Occasion }) {
       <div className="flex flex-1 flex-col p-5 md:p-6">
         <h3 className="type-h3">
           {/* The link covers the whole card, so the card is one tap target */}
-          <Link to={`/catalogue?occasion=${occasion.slug}`} className="after:absolute after:inset-0">{occasion.name}</Link>
+          <Link to={`/occasions/${occasion.slug}`} className="after:absolute after:inset-0">{occasion.name}</Link>
         </h3>
         <p className="type-body mt-2 text-muted">{occasion.description}</p>
         <p className="type-caption mt-3">{occasion.examples.slice(0, 3).join(', ')} and more</p>

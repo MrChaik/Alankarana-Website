@@ -9,5 +9,5 @@ export const about = {
   // Real photo (decor detail, flowers or materials) goes here: public/images/about/. A placeholder shows until then.
   image: '/images/about/about-main.jpg',
   imageAlt: 'Decor and flower details from an Alankarana setup',
-  cta: { label: 'About Alankarana', to: '/#about' },
+  cta: { label: 'About Alankarana', to: '/#contact' },
 }

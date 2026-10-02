@@ -195,6 +195,8 @@ export const designs: Design[] = [
 
 export const featuredDesigns = designs.filter((d) => d.featured)
 
+export const designsForOccasion = (slug: string) => designs.filter((design) => design.occasion === slug)
+
 export const getDesign = (id: string) => designs.find((d) => d.id === id)
 
 export const occasionName = (slug: string) => occasions.find((o) => o.slug === slug)?.name ?? slug
